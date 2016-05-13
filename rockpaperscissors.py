@@ -1,19 +1,16 @@
 import random
 import sys
 
-player_score = 0
-computer_score = 0
+def show_moves(p_move, c_move):
+	print "\tyou played %s" % p_move
+	print "\tyour opponent played %s" % c_move
 
-def who_wins(player_score, computer_score):
-	player_move = raw_input("your move, mister bond...\n > ")
-	computer_move = random.choice(["rock", "paper", "scissors"])
-	
-	def show_moves(p_move, c_move):
-		print "\tyou played %s" % p_move
-		print "\tyour opponent played %s" % c_move
+player_move = raw_input("your move, mister bond...\n > ")
+computer_move = random.choice(["rock", "paper", "scissors"])
+
 	
 	if player_move == "quit" or "exit":
-		sys.exit()
+  	sys.exit()
 	
 	elif player_move == computer_move:
 		show_moves(player_move, computer_move)
@@ -53,7 +50,4 @@ def who_wins(player_score, computer_score):
 		player_score = player_score - 1
 
 	print "\tplayer score = %s \n\tcomputer_score = %s" % (player_score, computer_score)	
-		
-	who_wins(player_score, computer_score)
-
-who_wins(0, 0)
+	
